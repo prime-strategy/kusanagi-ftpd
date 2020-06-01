@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 MAINTAINER kusanagi@prime-strategy.co.jp
 
 RUN apk add --no-cache vsftpd \
