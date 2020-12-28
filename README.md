@@ -11,6 +11,6 @@ docker run kusanagi-ftpd
 - 1.0.2-r1
 
 ## Image Content
-- Alpine Linux:3.12.1
+- Alpine Linux:3.12.3
 - vsftpd: 3.0.3-r6
 
