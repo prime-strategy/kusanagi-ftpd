@@ -1,4 +1,4 @@
-FROM alpine:3.12.3
+FROM alpine:3.13.2
 MAINTAINER kusanagi@prime-strategy.co.jp
 
 RUN apk add --no-cache vsftpd \
@@ -8,5 +8,11 @@ COPY files/vsftpd.conf /etc/vsftpd/vsftpd.conf
 COPY files/user_list /etc/vsftpd/user_list
 COPY files/docker-entrypoint.sh /
 EXPOSE 21 50021-50040
+
+RUN apk add --no-cache --virtual .curl curl \
+    && curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/master/contrib/install.sh | sh -s -- -b /usr/local/bin \
+    && trivy filesystem --exit-code 1 --no-progress / \
+    && apk del .curl \
+    && :
 
 CMD /docker-entrypoint.sh
