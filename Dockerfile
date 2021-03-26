@@ -1,5 +1,5 @@
-FROM alpine:3.13.2
-MAINTAINER kusanagi@prime-strategy.co.jp
+FROM alpine:3.13.3
+LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN apk add --no-cache vsftpd \
 && addgroup -g 1000 kusanagi \
