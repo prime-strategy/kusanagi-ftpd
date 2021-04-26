@@ -1,4 +1,4 @@
-FROM alpine:3.13.4
+FROM alpine:3.13.5
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN apk add --no-cache vsftpd \
