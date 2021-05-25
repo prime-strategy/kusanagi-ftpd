@@ -13,6 +13,7 @@ RUN apk add --no-cache --virtual .curl curl \
     && curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/master/contrib/install.sh | sh -s -- -b /usr/local/bin \
     && trivy filesystem --exit-code 1 --no-progress / \
     && apk del .curl \
+    && rm /usr/local/bin/trivy \
     && :
 
 CMD /docker-entrypoint.sh
