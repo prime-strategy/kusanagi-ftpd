@@ -1,7 +1,9 @@
-FROM alpine:3.13.5
+FROM alpine:3.14.0
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
-RUN apk add --no-cache vsftpd \
+RUN : \
+    && apk upgrade apk-tools \
+    && apk add --no-cache vsftpd \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
 COPY files/vsftpd.conf /etc/vsftpd/vsftpd.conf
