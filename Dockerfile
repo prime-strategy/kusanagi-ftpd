@@ -1,4 +1,4 @@
-FROM alpine:3.14.2
+FROM alpine:3.14.3
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
@@ -17,4 +17,5 @@ RUN apk add --no-cache --virtual .curl curl \
     && rm /tmp/trivy \
     && :
 
+USER kusanagi
 CMD /docker-entrypoint.sh
