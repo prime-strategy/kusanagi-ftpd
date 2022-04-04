@@ -8,9 +8,9 @@ docker run kusanagi-ftpd
 
 ## Versions(tags)
 - latest
-- 1.0.4-r2
+- 1.0.5-r0
 
 ## Image Content
-- Alpine Linux:3.15.1
+- Alpine Linux:3.15.3
 - vsftpd: 3.0.5-r1
 
