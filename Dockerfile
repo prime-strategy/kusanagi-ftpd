@@ -1,9 +1,7 @@
-FROM alpine:3.15.3
+FROM alpine:3.15.4
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
-    && apk update \
-	&& apk upgrade libretls \
     && apk add --no-cache vsftpd \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
