@@ -2,6 +2,8 @@ FROM --platform=$BUILDPLATFORM alpine:3.16.0
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
+    && apk update \
+    && apk upgrade libcrypto1.1 libssl1.1 \
     && apk add --no-cache vsftpd \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
