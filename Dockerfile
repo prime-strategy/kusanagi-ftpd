@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM alpine:3.16.2
+FROM --platform=$BUILDPLATFORM alpine:3.17.0
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
