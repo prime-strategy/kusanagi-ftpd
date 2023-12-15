@@ -1,11 +1,11 @@
-FROM --platform=$BUILDPLATFORM alpine:3.18.4
+FROM --platform=$BUILDPLATFORM alpine:3.19.0
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
     && apk add --no-cache \
         vsftpd \
-        libssl3=3.1.4-r1 \
-        libcrypto3=3.1.4-r1 \
+        libssl3=3.1.4-r2 \
+        libcrypto3=3.1.4-r2 \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
 COPY files/vsftpd.conf /etc/vsftpd/vsftpd.conf
