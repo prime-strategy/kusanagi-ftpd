@@ -3,6 +3,7 @@ LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
     && apk add --no-cache \
+        busybox=1.36.1-r16 \
         vsftpd \
         libssl3=3.1.4-r6 \
         libcrypto3=3.1.4-r6 \
