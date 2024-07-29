@@ -1,12 +1,12 @@
-FROM --platform=$BUILDPLATFORM alpine:3.20.0
+FROM --platform=$BUILDPLATFORM alpine:3.20.1
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
     && apk add --no-cache \
         vsftpd \
         busybox=1.36.1-r29 \
-        libssl3=3.3.1-r1 \
-        libcrypto3=3.3.1-r1 \
+        libssl3=3.3.1-r3 \
+        libcrypto3=3.3.1-r3 \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
 COPY files/vsftpd.conf /etc/vsftpd/vsftpd.conf
@@ -21,4 +21,4 @@ RUN apk add --no-cache --virtual .curl curl \
     && rm /tmp/trivy \
     && :
 
-CMD /docker-entrypoint.sh
+CMD ["/docker-entrypoint.sh"]
