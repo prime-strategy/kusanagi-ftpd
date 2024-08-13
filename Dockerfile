@@ -1,10 +1,9 @@
-FROM --platform=$BUILDPLATFORM alpine:3.20.1
+FROM --platform=$BUILDPLATFORM alpine:3.20.2
 LABEL maintainer="kusanagi@prime-strategy.co.jp"
 
 RUN : \
     && apk add --no-cache \
         vsftpd \
-        busybox=1.36.1-r29 \
         libssl3=3.3.1-r3 \
         libcrypto3=3.3.1-r3 \
     && addgroup -g 1000 kusanagi \
