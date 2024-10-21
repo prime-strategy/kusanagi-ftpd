@@ -4,8 +4,8 @@ LABEL maintainer="kusanagi@prime-strategy.co.jp"
 RUN : \
     && apk add --no-cache \
         vsftpd \
-        libssl3=3.3.2-r0 \
-        libcrypto3=3.3.2-r0 \
+        libssl3=3.3.2-r1 \
+        libcrypto3=3.3.2-r1 \
     && addgroup -g 1000 kusanagi \
     && adduser -h /home/kusanagi -s /bin/false -u 1000 -G kusanagi -D kusanagi
 COPY files/vsftpd.conf /etc/vsftpd/vsftpd.conf
