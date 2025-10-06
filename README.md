@@ -7,7 +7,7 @@ docker run kusanagi-ftpd
 ```
 
 ## Versions(tags)
-- 1.0.13-r1
+- 1.0.13-r2
 
 ## Image Content
 - Alpine Linux:3.22.0
