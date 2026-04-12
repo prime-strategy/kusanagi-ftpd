@@ -4,6 +4,8 @@ LABEL maintainer="kusanagi@prime-strategy.co.jp"
 RUN : \
     && apk upgrade  --no-cache \
         busybox \
+        musl \
+        musl-utils \
         zlib \
         libssl3 \
         libcrypto3 \
